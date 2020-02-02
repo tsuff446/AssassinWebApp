@@ -69,6 +69,7 @@
                     }
                     if(array_key_exists('DisputeButton', $_POST)) { 
                         $conn->query("UPDATE myusers SET ALIVE = '1' WHERE USERNAME = '$curr_user'");
+                        $conn->query("UPDATE gamefeed SET DISPUTED = '1' WHERE VICTIM_ID = '$curr_user'");
                         header("Refresh:0");
                     }
             ?>

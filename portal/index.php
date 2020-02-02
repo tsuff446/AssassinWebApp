@@ -72,6 +72,7 @@
 						$next = True;
 						$curr_user_name = $row["NAME"];
 					}
+					$j = $j + 1;
 				}
 				echo "<p>";
 				echo "$target";

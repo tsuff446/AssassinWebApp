@@ -44,14 +44,24 @@
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
-                $sql = "SELECT * FROM gamefeed";
+                $sql = "SELECT * FROM `gamefeed` ORDER by KILL_TIME DESC";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
+					
                     echo "<table><tr><th>Killer:</th><th>Victim:</th><th>Disputed?</th><th>Time Of:</th><th>Confirmed?</th></tr>";
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-						echo "<tr><td>".$row["KILLER_NAME"]."</td><td>".$row["VICTIM_NAME"]."</td><td>".$row["DISPUTED"]."</td>
-						<td>".$row["KILL_TIME"]."</td><td>".$row["CONFIRMED"]."</td></tr>";
+						if($row["DISPUTED"])
+							$dispute_color = 'background-color:red';
+						else
+							$dispute_color = 'background-color:green';
+						if($row["CONFIRMED"])
+							$conf_color = 'background-color:green';
+						else
+							$conf_color = 'background-color:red';
+
+						echo "<tr><td>".$row["KILLER_NAME"]."</td><td>".$row["VICTIM_NAME"]."</td><td style=".$dispute_color."></td>
+						<td>".$row["KILL_TIME"]."</td><td style=".$conf_color."></td></tr>";
                     }
                     echo "</table>";
                 } else {
