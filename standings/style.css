@@ -1,0 +1,76 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    background-color: #00074f;
+    color: white;
+}
+
+h1{
+    text-shadow: 10px;
+    color: #084C61
+}
+p{
+    color: #084C61
+}
+label{
+    color: #084C61
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #FFC857;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10%;
+  }
+
+input[type=text]{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.centerBox{
+    margin: auto;
+    text-align: center;
+    background-color: #8FBFE0;
+    width: 50%;
+    border-radius: 10px;
+}
+.navBar{
+    margin:auto;
+    width: 75%;
+    height: 70px;
+    background-color: #8FBFE0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navElement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    border: 1px solid black;
+}
+
+
+.navElement:hover{
+    background-color: white;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    width: 25%;
+}
+table, th, td {
+    border: 1px solid black;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
