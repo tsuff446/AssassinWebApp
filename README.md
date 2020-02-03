@@ -5,10 +5,10 @@ A server application written in PHP and MySQL to facilitate the running of an "a
 2. A MySQL database
 ## Setup
 First, change the parameters in sql_creds.txt
-. The first line is sql server address
-. The second line is username
-. The third line is password
-. The fourth line is the name of the database you want to store the information on
+* The first line is sql server address
+* The second line is username
+* The third line is password
+* The fourth line is the name of the database you want to store the information on
 
 Then, change the admin password in admin_password.txt
 This is the ID that the admin (who cannot play) will log in with on the main page to give them access to the admin page
