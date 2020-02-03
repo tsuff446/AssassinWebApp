@@ -48,7 +48,7 @@
         <?php
         if($_SERVER["REQUEST_METHOD"] == "POST"){
     
-            $myfile = fopen("../sql_creds.txt", "r") or die("Unable to open file!");
+            $myfile = fopen("sql_creds.txt", "r") or die("Unable to open file!");
             $servername = trim(fgets($myfile));
             $username = trim(fgets($myfile));
             $password = trim(fgets($myfile));
