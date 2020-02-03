@@ -10,6 +10,10 @@ First, change the parameters in sql_creds.txt
 . The third line is password
 . The fourth line is the name of the database you want to store the information on
 
+Then, change the admin password in admin_password.txt
+This is the ID that the admin (who cannot play) will log in with on the main page to give them access to the admin page
+If you leave this file empty, then anyone will be able to access the page (which could be useful for debugging purposes)
+
 
 When users go to the website for the first time, they are prompted to sign in/ sign up.
 ![View of homepage](readme_images/homepage.png)
