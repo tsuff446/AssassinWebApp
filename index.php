@@ -6,6 +6,9 @@
         <?php
 			if(isset($_COOKIE["userID"]))
                 header("Location: /portal");
+                $myfile = fopen("admin_password.txt", "r") or die("Unable to open file!");
+                $admin_pass = fgets($myfile);
+                fclose($myfile);
 		?>
 		<div class="navBar">
 			<a href="../">
@@ -76,7 +79,11 @@
                     setCookie("userID", $user_input, time()+60*24*60*60, "/");
                     header("Location: ../portal/index.php");
                 }else{
-                    echo "User not Found";
+                    if($user_input != $admin_pass)
+                        echo "User not Found";
+                    else
+                        setCookie("userID", $user_input, time()+60*24*60*60, "/");
+                        echo "Admin Logged in";
                 }
             }else{
                 echo "Input to field is improper";

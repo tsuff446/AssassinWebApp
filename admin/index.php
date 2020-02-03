@@ -10,12 +10,22 @@
             $password = trim(fgets($myfile));
             $dbname = trim(fgets($myfile));
             fclose($myfile);
+            
             // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname);
             // Check connection
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
+
+            $myfile = fopen("../admin_password.txt", "r") or die("Unable to open file!");
+            $admin_pass = trim(fgets($myfile));
+            fclose($myfile);
+            if(!isset($_COOKIE["userID"]) && strlen($admin_pass) > 0)
+                header("Location: ../"); 
+            if(isset($_COOKIE["userID"]) && strlen($admin_pass) > 0 && $_COOKIE["userID"] != $admin_pass)
+                header("Location: ../"); 
+             
         ?>
 		<div class="navBar">
 			<a href="../">
