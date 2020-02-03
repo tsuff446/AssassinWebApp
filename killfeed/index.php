@@ -34,10 +34,12 @@
 		<div class="centerBox">
             <h1>Killfeed:</h1>
             <?php
-                $servername = 'localhost';
-                $username = 'thomas';
-                $password = 'notadmin';
-                $dbname = 'userdata';
+                $myfile = fopen("../sql_creds.txt", "r") or die("Unable to open file!");
+				$servername = trim(fgets($myfile));
+				$username = trim(fgets($myfile));
+				$password = trim(fgets($myfile));
+				$dbname = trim(fgets($myfile));
+				fclose($myfile);
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
                 // Check connection
